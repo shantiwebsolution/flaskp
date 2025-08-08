@@ -1,0 +1,20 @@
+# Example variable values for terraform.tfvars
+# These defaults are suitable for production environments
+
+key_pair_name = "my-key-pair"  # Name of existing EC2 key pair
+environment = "production"   # Environment tag (production, staging, etc.)
+project_name = "flaskp"       # Project identifier for tagging
+owner = "user"                # Owner tag for resources
+
+# Tags for EC2 instances (can be overridden in main.tf)
+instance_tags = {
+  Name        = "web-server"
+  Environment = "production"
+  Project     = "flaskp"
+  Owner       = "user"
+}
+
+# CloudWatch log group configuration
+log_group_name = "/aws/ec2/flaskp"           # Log group name
+log_retention_days = 7                      # Retention period in days
+kms_key_id = "arn:aws:kms:us-west-2:123456789012:key/abcd1234-5678-abcdefgh-9012"  # KMS key ARN for encryption

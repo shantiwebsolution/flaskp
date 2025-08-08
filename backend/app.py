@@ -1,3 +1,4 @@
+import logging
 from flask import Flask, request, jsonify
 
 app = Flask(__name__)
@@ -6,21 +7,31 @@ app = Flask(__name__)
 def hello():
     return {'message': 'Hello, Flask!', 'status': 'success'}
 
+@app.route('/be/')
+def hello_be():
+    return {'message': 'Hello, Flask from /be!', 'status': 'success'}
+
 @app.route('/health')
 def health_check():
     return {'status': 'healthy', 'service': 'Flask Backend'}
 
+@app.route('/be/health')
+def health_check_be():
+    return {'status': 'healthy', 'service': 'Flask Backend /be'}
+
 @app.route('/sum', methods=['POST'])
+@app.route('/be/sum', methods=['POST'])
 def calculate_sum():
     try:
         # Get 'a' and 'b' from form data
-        a = request.form.get('a')
-        b = request.form.get('b')
-        
+        data = request.get_json()  # requires Content-Type: application/json
+        a = data.get("a") if data else None
+        b = data.get("b") if data else None
+        print(f"Received values: a={a}, b={b}")
         # Validate that both values are provided
         if a is None or b is None:
             return jsonify({
-                'error': 'Both parameters a and b are required',
+                'error': 'Both parameters a and b are required..',
                 'status': 'error'
             }), 400
         

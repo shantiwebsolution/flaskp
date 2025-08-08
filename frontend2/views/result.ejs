@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator - Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .btn {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            margin-top: 10px;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .btn-secondary {
+            background-color: #6c757d;
+            margin-top: 20px;
+        }
+        .btn-secondary:hover {
+            background-color: #545b62;
+        }
+        .result-box {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .result-item {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+        .result-sum {
+            font-size: 24px;
+            font-weight: bold;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Calculation Result</h1>
+        
+        <div class="result-box">
+            <div class="result-item">
+                <strong>Value A:</strong> <%= result.a %>
+            </div>
+            <div class="result-item">
+                <strong>Value B:</strong> <%= result.b %>
+            </div>
+            <div class="result-item result-sum">
+                <strong>Sum (A + B):</strong> <%= result.sum %>
+            </div>
+            <div class="result-item" style="font-size: 14px; color: #666; margin-top: 15px;">
+                <strong>Status:</strong> <%= result.status %>
+            </div>
+        </div>
+        
+        <a href="/" class="btn btn-secondary">Calculate Another</a>
+        
+        <div style="margin-top: 30px; padding: 15px; background-color: #f8f9fa; border-radius: 5px;">
+            <h3 style="margin-top: 0; color: #495057;">API Response Details:</h3>
+            <pre style="background-color: #e9ecef; padding: 10px; border-radius: 3px; overflow-x: auto;"><%= JSON.stringify(result, null, 2) %></pre>
+        </div>
+    </div>
+</body>
+</html>

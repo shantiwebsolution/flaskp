@@ -1,0 +1,12 @@
+../backend is flask Python application
+../frontend2 is express node application
+
+Terraform code is inside ./tf folder
+
+Screenshots are inside ./Screenshots folder
+those includes teminal + AWS console Screenshots
+
+../../../buildPush file is used to build and push docker images to AWS ECR
+
+frontend URL: http://frontend-alb-p3-1931205616.ap-south-1.elb.amazonaws.com/
+backend URL: backend-alb-p3-1518597278.ap-south-1.elb.amazonaws.com

@@ -1,0 +1,11 @@
+
+../backend is flask Python application
+../frontend2 is express node application
+
+Terraform code is inside ./tf folder
+EC2 will have ssm-agent to connect via console with SSM and docker
+
+Screenshots are inside ./Screenshots folder
+those includes teminal + AWS console Screenshots
+Frontend access http://13.126.193.14:3000/
+
