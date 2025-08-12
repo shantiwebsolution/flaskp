@@ -9,3 +9,10 @@ check assignemnt_6/task2  folder for AWS screens
 using same backend as above serve
 access front end
 http://ec2-13-235-114-20.ap-south-1.compute.amazonaws.com:3000/
+
+Task 3
+check assignemnt_6/task3  folder for AWS screens
+front end
+http://52.66.215.52:3000/
+backend
+http://52.66.215.52:5000/
